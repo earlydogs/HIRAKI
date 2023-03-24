@@ -6,14 +6,18 @@
   <div class="row">
     <% 3.times do |i| %>
       <div class="col-lg-4 col-md-12">
-        <%= month_calendar(attribute: :date, start_date: Date.today.next_month(i).beginning_of_month) do |date| %>
+        <%= month_calendar(attribute: :date, start_date: Date.today.next_month(i).beginning_of_month, show_navigation: false) do |date| %>
           <%= content_tag :div, class: "day-box" do %>
             <%= date.day %>
             <br>
-            <% if true # ここに宿泊予約が空いているかどうかの条件式を追加してください %>
-              <%= link_to "○", "#" %>
+            <% if date.month == (Date.today.month + i) %>
+              <% if true # ここに宿泊予約が空いているかどうかの条件式を追加してください %>
+                <%= link_to "○", "#" %>
+              <% else %>
+                予約不可
+              <% end %>
             <% else %>
-              予約不可
+              <%= content_tag :span, "-", class: "text-muted" %>
             <% end %>
           <% end %>
         <% end %>
