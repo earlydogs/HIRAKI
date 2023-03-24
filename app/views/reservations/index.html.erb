@@ -1,0 +1,19 @@
+<%= render partial: 'shared/navbar' %>
+
+<div class="container mt-5">
+  <h1 class="text-center mb-4">宿泊状況確認ページ</h1>
+
+  <% 3.times do |i| %>
+    <%= month_calendar(attribute: :date, month: Date.today.month + i) do |date| %>
+      <%= content_tag :div, class: "day-box" do %>
+        <%= date.day %>
+        <br>
+        <% if true # ここに宿泊予約が空いているかどうかの条件式を追加してください %>
+          <%= link_to "○", "#" %>
+        <% else %>
+          予約不可
+        <% end %>
+      <% end %>
+    <% end %>
+  <% end %>
+</div>
