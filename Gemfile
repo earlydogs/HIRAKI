@@ -8,7 +8,6 @@ gem "rails", "~> 7.0.4", ">= 7.0.4.3"
 
 gem "devise"
 gem "bootstrap"
-gem "jquery-rails"
 gem "font-awesome-sass"
 gem "simple_calendar"
 
