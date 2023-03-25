@@ -18,3 +18,16 @@
 @import "simple_calendar";
 @import "reservations";
 @import "calendar";
+
+
+
+.simple-calendar {
+    // 他のスタイルがある場合はそのままにしておきます。
+
+    .day-box {
+        // 既存のスタイルがある場合はそのままにしておきます。
+
+        // 外枠を削除するために、以下の行を追加します。
+        border: none;
+    }
+}
